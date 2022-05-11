@@ -12,8 +12,16 @@ brew install zoxide
 brew install grc
 brew install ripgrep
 brew install tmux
-brew install spaceman
+brew install fnm
+brew install watchexec
+brew install bottom
+brew install dust
+brew install tealdeer
+brew install topgrade
+brew install alt-tab	
 brew install --cask miniconda
+brew install --cask raycast
+brew install --cask spaceman
 ```
 
 ## Vim
