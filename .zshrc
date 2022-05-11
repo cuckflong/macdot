@@ -65,7 +65,7 @@ ZSH_HIGHLIGHT_STYLES[double-hyphen-option]='fg=cyan'
 ZSH_HIGHLIGHT_STYLES[redirection]='fg=magenta,bold'
 ZSH_HIGHLIGHT_STYLES[commandseparator]='fg=magenta,bold'
 
-[[ -s "/Users/cuckflong/.config/grc.zsh" ]] && source /Users/cuckflong/.config/grc.zsh
+[[ -s "$HOME/.config/grc.zsh" ]] && source $HOME/.config/grc.zsh
 
 # fzf functions
 # fuzzy man page
