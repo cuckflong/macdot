@@ -27,10 +27,13 @@ Reload `.vimrc` and `:PlugInstall` to install plugins.
 ```
 # Speed up dock animation
 defaults write com.apple.dock autohide-delay -float 0 && defaults write com.apple.dock autohide-time-modifier -float 0.4 && killall Dock
+
 # Sort folders first in finder
 defaults write com.apple.finder _FXSortFoldersFirst -bool true; killall Finder
+
 # Show full path in finder
 defaults write com.apple.finder _FXShowPosixPathInTitle -bool true; killall Finder
+
 # Show active app only in dock
 defaults write com.apple.dock static-only -bool true; killall Dock
 ```
