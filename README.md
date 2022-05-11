@@ -36,13 +36,13 @@ defaults write com.apple.dock static-only -bool true; killall Dock
 ```
 
 ### Apps
-iTerm2
-Swish
-CleanshotX
-AltTab
-Raycast
-iStat Menus
-Bartender 4
-Spaceman
-Yoink
-UpNote
+* iTerm2
+* Swish
+* CleanshotX
+* AltTab
+* Raycast
+* iStat Menus
+* Bartender 4
+* Spaceman
+* Yoink
+* UpNote
