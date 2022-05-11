@@ -1,0 +1,37 @@
+[conda]
+ignore_base = false
+
+[shell]
+zsh_indicator = " "
+disabled = false
+
+[status]
+disabled = false
+map_symbol = true
+
+[package]
+disabled = true
+
+[character]
+error_symbol = "[✗](bold red)"
+
+#[git_metrics]
+#disabled = false
+#added_style = "bold blue"
+#format = '[+$added]($added_style)/[-$deleted]($deleted_style) '
+
+[git_status]
+conflicted = "⚔️ "
+ahead = "🏎💨"
+behind = "🐢"
+diverged = "😵"
+untracked = "🤷"
+stashed = "📦"
+modified = "📝"
+staged = "🗃️ "
+renamed = "👅"
+deleted = "🗑"
+format = "([$all_status$ahead_behind]($style) )"
+
+[git_branch]
+style = "italic bold purple"
