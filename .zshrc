@@ -163,7 +163,7 @@ setopt incappendhistory #Immediately append to the history file, not just when a
 
 eval "$(starship init zsh)"
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f $HOME/.config/.fzf.zsh ] && source $HOME/.config/.fzf.zsh
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
