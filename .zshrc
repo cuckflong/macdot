@@ -27,6 +27,8 @@ alias lt="exa --tree -a -I '.git|__pycache__|.mypy_cache|.ipynb_checkpoints|node
 
 alias cl=clear
 alias j=z
+alias cd=z
+alias zz="z -"
 
 alias config='git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
