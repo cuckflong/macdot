@@ -30,7 +30,7 @@ stashed = "📦"
 modified = "📝"
 staged = "🗃️ "
 renamed = "👅"
-deleted = "🗑"
+deleted = "🗑 "
 format = "([$all_status$ahead_behind]($style) )"
 
 [git_branch]
