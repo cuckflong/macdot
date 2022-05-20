@@ -10,7 +10,7 @@ fi
 
 eval "$(zoxide init zsh)"
 
-antibody bundle < ~/.zsh_plugins.txt
+antibody bundle < $HOME/.zsh_plugins.txt
 
 setopt interactive_comments
 
@@ -46,6 +46,7 @@ alias gs="git status"
 
 # go bin path
 export PATH=$PATH:$HOME/go/bin
+export PATH=$PATH:$HOME/.cargo/bin
 export EDITOR=vim
 
 # python
