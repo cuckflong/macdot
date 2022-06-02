@@ -98,6 +98,8 @@ function fdd() {
   cd "$dir"
 }
 
+bindkey -s ^f "fdd\n"
+
 # fuzzy directory finder (including hidden)
 function fda() {
   local dir
@@ -163,6 +165,8 @@ SAVEHIST=5000               #Number of history entries to save to disk
 setopt    appendhistory     #Append history to the history file (no overwriting)
 unsetopt share_history
 setopt incappendhistory #Immediately append to the history file, not just when a term is killed
+
+source <(kubectl completion zsh)
 
 eval "$(starship init zsh)"
 
