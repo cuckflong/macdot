@@ -13,9 +13,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'tpope/vim-fugitive'
-Plug 'preservim/nerdcommenter'
 Plug 'tpope/vim-surround'
-Plug 'easymotion/vim-easymotion'
 Plug 'windwp/nvim-autopairs'
 Plug 'Yggdroot/indentLine'
 Plug 'williamboman/nvim-lsp-installer'
@@ -30,9 +28,14 @@ Plug 'L3MON4D3/LuaSnip'
 Plug 'tami5/lspsaga.nvim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'windwp/nvim-ts-autotag'
-Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production' }
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'mbbill/undotree'
+Plug 'lewis6991/gitsigns.nvim'
+Plug 'numToStr/Comment.nvim'
+Plug 'ggandor/lightspeed.nvim'
+Plug 'wellle/targets.vim'
+Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production' }
+" Plug 'sbdchd/neoformat'
 
 call plug#end()

@@ -22,18 +22,18 @@ nmap <Tab> :tabnext<Return>
 " Windows
 
 " Split window
-nmap ss :split<Return><C-w>w
-nmap sv :vsplit<Return><C-w>w
+nmap ws :split<Return><C-w>w
+nmap wv :vsplit<Return><C-w>w
 " Move window
 nmap <Space> <C-w>w
-map s<left> <C-w>h
-map s<up> <C-w>k
-map s<down> <C-w>j
-map s<right> <C-w>l
-map sh <C-w>h
-map sk <C-w>k
-map sj <C-w>j
-map sl <C-w>l
+map w<left> <C-w>h
+map w<up> <C-w>k
+map w<down> <C-w>j
+map w<right> <C-w>l
+map wh <C-w>h
+map wk <C-w>k
+map wj <C-w>j
+map wl <C-w>l
 " Resize window
 nmap <C-w><left> <C-w><
 nmap <C-w><right> <C-w>>
@@ -56,4 +56,13 @@ nmap <leader>bq :bp <BAR> bd #<CR>
 
 " Show all open buffers and their status
 nmap <leader>bl :ls<CR>
+
+" Move lines and blocks
+nnoremap <C-h> :m+<CR>==
+nnoremap <C-g> :m-2<CR>==
+inoremap <C-h> <Esc>:m+<CR>==gi
+inoremap <C-g> <Esc>:m-2<CR>==gi
+vnoremap <C-h> :m'>+<CR>gv=gv
+vnoremap <C-g> :m-2<CR>gv=gv
+
 
