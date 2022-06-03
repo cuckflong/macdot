@@ -1,4 +1,5 @@
 " Description: Keymaps
+nnoremap <C-c> <silent> <C-c>
 
 " Delete without yank
 nnoremap <leader>d "_d
