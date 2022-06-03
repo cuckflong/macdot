@@ -35,7 +35,6 @@ Plug 'lewis6991/gitsigns.nvim'
 Plug 'numToStr/Comment.nvim'
 Plug 'ggandor/lightspeed.nvim'
 Plug 'wellle/targets.vim'
-" Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production' }
 Plug 'sbdchd/neoformat'
 
 call plug#end()
