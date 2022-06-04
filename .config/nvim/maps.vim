@@ -10,14 +10,6 @@ nnoremap + <C-a>
 nnoremap - <C-x>
 
 "-----------------------------
-" Tabs
-
-" Open current directory
-nmap te :tabedit 
-nmap <S-Tab> :tabprev<Return>
-nmap <Tab> :tabnext<Return>
-
-"------------------------------
 
 "------------------------------
 " Windows
@@ -42,21 +34,14 @@ nmap <C-w><up> <C-w>+
 nmap <C-w><down> <C-w>-
 
 " Buffers
-
 " Open a new empty buffer
-nmap <leader>t :enew<cr>
-
+nmap nb :enew<cr>
 " Move to the next buffer
-nmap <leader>l :bnext<CR>
-
+nmap <Tab> :bnext<CR>
 " Move to the previous buffer
-nmap <leader>h :bprevious<CR>
-
-" Close the current buffer and move to the previous one
-nmap <leader>bq :bp <BAR> bd #<CR>
-
-" Show all open buffers and their status
-nmap <leader>bl :ls<CR>
+nmap <S-Tab> :bprevious<CR>
+" Close the current buffer
+nmap cb :bd<CR>
 
 " Move lines and blocks
 nnoremap <C-h> :m+<CR>==

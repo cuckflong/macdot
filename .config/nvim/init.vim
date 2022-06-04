@@ -17,12 +17,12 @@ set hidden
 set nobackup
 set noswapfile
 set nowritebackup
-set updatetime=50
+set updatetime=100
 set shortmess+=c
 set nohlsearch
 set incsearch
 set noerrorbells
-set scrolloff=8
+set scrolloff=10
 set cmdheight=2
 
 set t_Co=256

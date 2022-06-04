@@ -1,6 +1,7 @@
-local saga = require 'lspsaga'
-saga.init_lsp_saga {
+local lspsaga = require 'lspsaga'
+lspsaga.setup { -- defaults ...
   border_style = "round",
+  -- use_diagnostic_virtual_text = false
 }
 --- In lsp attach function
 local map = vim.api.nvim_buf_set_keymap
@@ -8,7 +9,7 @@ map(0, "n", "gr", "<cmd>Lspsaga rename<cr>", {silent = true, noremap = true})
 map(0, "n", "gx", "<cmd>Lspsaga code_action<cr>", {silent = true, noremap = true})
 map(0, "x", "gx", ":<c-u>Lspsaga range_code_action<cr>", {silent = true, noremap = true})
 map(0, "n", "K",  "<cmd>Lspsaga hover_doc<cr>", {silent = true, noremap = true})
-map(0, "n", "gs",  "<cmd>Lspsaga signature_help<cr>", {silent = true, noremap = true})
+map(0, "n", "gd",  "<cmd>Lspsaga signature_help<cr>", {silent = true, noremap = true})
 map(0, "n", "gp",  "<cmd>Lspsaga preview_definition<cr>", {silent = true, noremap = true})
 map(0, "n", "gh",  "<cmd>Lspsaga lsp_finder<cr>", {silent = true, noremap = true})
 map(0, "n", "go", "<cmd>Lspsaga show_line_diagnostics<cr>", {silent = true, noremap = true})
