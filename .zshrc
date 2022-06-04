@@ -49,7 +49,7 @@ alias gs="git status"
 # go bin path
 export PATH=$PATH:$HOME/go/bin
 export PATH=$PATH:$HOME/.cargo/bin
-export EDITOR=vim
+export EDITOR=nvim
 
 # python
 alias python=python3
@@ -73,10 +73,12 @@ ZSH_HIGHLIGHT_STYLES[commandseparator]='fg=magenta,bold'
 [[ -s "$HOME/.config/grc.zsh" ]] && source $HOME/.config/grc.zsh
 
 # fzf functions
-# fuzzy man page
-fman() {
-    man -k . | fzf -q "$1" --prompt='man> '  --preview $'echo {} | tr \'()\' \' \' | tr A-Z a-z | awk \'{printf "%s ", $2} {print $1}\' | xargs -r man | col -bx | bat -l man -p --color always' | tr '()' ' ' | tr A-Z a-z | awk '{printf "%s ", $2} {print $1}' | xargs -r man
+
+fe() {
+  IFS=$'\n' files=($(fzf-tmux --query="$1" --multi --select-1 --exit-0))
+  [[ -n "$files" ]] && vim "${files[@]}"
 }
+
 # Get the colors in the opened man page itself
 export MANPAGER="sh -c 'col -bx | bat -l man -p --paging always'"
 
@@ -100,7 +102,7 @@ function fdd() {
   cd "$dir"
 }
 
-bindkey -s ^f "fdd\n"
+bindkey -s ^f "fe\n"
 
 # fuzzy directory finder (including hidden)
 function fda() {
