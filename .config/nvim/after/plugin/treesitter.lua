@@ -1,13 +1,6 @@
 require'nvim-treesitter.configs'.setup {
   highlight = {
     enable = true,
-    disable = {},
+    use_languagetree = true,
   },
-  indent = {
-    enable = true,
-    disable = {},
-  },
-  autotag = {
-    enable = true,
-  }
 }

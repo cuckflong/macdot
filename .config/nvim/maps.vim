@@ -15,23 +15,19 @@ nnoremap - <C-x>
 " Windows
 
 " Split window
-nmap ws :split<Return><C-w>w
-nmap wv :vsplit<Return><C-w>w
+nmap qs :split<Return><C-w>w
+nmap qv :vsplit<Return><C-w>w
 " Move window
 nmap <Space> <C-w>w
-map w<left> <C-w>h
-map w<up> <C-w>k
-map w<down> <C-w>j
-map w<right> <C-w>l
-map wh <C-w>h
-map wk <C-w>k
-map wj <C-w>j
-map wl <C-w>l
+map q<left> <C-w>h
+map q<up> <C-w>k
+map q<down> <C-w>j
+map q<right> <C-w>l
 " Resize window
-nmap <C-w><left> <C-w><
-nmap <C-w><right> <C-w>>
-nmap <C-w><up> <C-w>+
-nmap <C-w><down> <C-w>-
+map qh <C-w><
+map qk <C-w>+
+map qj <C-w>-
+map ql <C-w>>
 
 " Buffers
 " Open a new empty buffer
@@ -44,11 +40,11 @@ nmap <S-Tab> :bprevious<CR>
 nmap cb :bd<CR>
 
 " Move lines and blocks
-nnoremap <C-h> :m+<CR>==
-nnoremap <C-g> :m-2<CR>==
-inoremap <C-h> <Esc>:m+<CR>==gi
-inoremap <C-g> <Esc>:m-2<CR>==gi
-vnoremap <C-h> :m'>+<CR>gv=gv
-vnoremap <C-g> :m-2<CR>gv=gv
+nnoremap <S-down> :m+<CR>==
+nnoremap <S-up> :m-2<CR>==
+inoremap <S-down> <Esc>:m+<CR>==gi
+inoremap <S-up> <Esc>:m-2<CR>==gi
+vnoremap <S-down> :m'>+<CR>gv=gv
+vnoremap <S-up> :m-2<CR>gv=gv
 
 

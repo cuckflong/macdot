@@ -78,6 +78,7 @@ set guicursor=i:block
 " Imports "{{{
 " ---------------------------------------------------------------------
 runtime ./plug.vim
+
 if has("unix")
   let s:uname = system("uname -s")
   " Do Mac stuff
