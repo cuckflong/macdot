@@ -15,19 +15,19 @@ nnoremap - <C-x>
 " Windows
 
 " Split window
-nmap qs :split<Return><C-w>w
-nmap qv :vsplit<Return><C-w>w
+nmap hs :split<Return><C-w>w
+nmap hv :vsplit<Return><C-w>w
 " Move window
 nmap <Space> <C-w>w
-map q<left> <C-w>h
-map q<up> <C-w>k
-map q<down> <C-w>j
-map q<right> <C-w>l
+map h<left> <C-w>h
+map h<up> <C-w>k
+map h<down> <C-w>j
+map h<right> <C-w>l
 " Resize window
-map qh <C-w><
-map qk <C-w>+
-map qj <C-w>-
-map ql <C-w>>
+map hh <C-w><
+map hk <C-w>+
+map hj <C-w>-
+map hl <C-w>>
 
 " Buffers
 " Open a new empty buffer

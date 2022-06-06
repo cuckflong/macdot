@@ -13,10 +13,6 @@ for _, lsp in ipairs(servers) do
 }
 end
 
-vim.diagnostic.config({
-  update_in_insert = true,
-})
-
 -- vim.cmd [[autocmd! CursorHold * Lspsaga show_cursor_diagnostics ]]
 --
 -- function PrintDiagnostics(opts, bufnr, line_nr, client_id)

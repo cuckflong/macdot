@@ -76,7 +76,7 @@ ZSH_HIGHLIGHT_STYLES[commandseparator]='fg=magenta,bold'
 
 fe() {
   IFS=$'\n' files=($(fzf-tmux --query="$1" --multi --select-1 --exit-0))
-  [[ -n "$files" ]] && vim "${files[@]}"
+  [[ -n "$files" ]] && nvim "${files[@]}"
 }
 
 # Get the colors in the opened man page itself

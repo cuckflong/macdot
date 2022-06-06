@@ -3,14 +3,10 @@ if has("nvim")
 endif
 
 call plug#begin()
-Plug 'lewis6991/impatient.nvim'
-call plug#end()
-
-lua require('impatient')
-
-call plug#begin()
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+" Plug 'lewis6991/impatient.nvim'
+Plug 'nvim-lualine/lualine.nvim'
+Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' }
+Plug 'SmiteshP/nvim-gps'
 Plug 'frazrepo/vim-rainbow'
 Plug 'kyazdani42/nvim-web-devicons' " for file icons
 Plug 'kyazdani42/nvim-tree.lua'
@@ -47,4 +43,7 @@ Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'ray-x/lsp_signature.nvim'
+Plug 'j-hui/fidget.nvim'
+
 call plug#end()
+
