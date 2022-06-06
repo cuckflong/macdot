@@ -40,7 +40,6 @@ Plug 'ggandor/lightspeed.nvim'
 Plug 'wellle/targets.vim'
 Plug 'sbdchd/neoformat'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
-Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'ray-x/lsp_signature.nvim'
 Plug 'j-hui/fidget.nvim'
