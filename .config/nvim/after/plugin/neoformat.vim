@@ -10,4 +10,4 @@ augroup fmt
   au BufWritePre * try | undojoin | Neoformat | catch /E790/ | Neoformat | endtry
 augroup END
 
-noremap nf :Neoformat<CR>
+noremap <leader>nf :Neoformat<CR>

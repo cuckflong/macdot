@@ -3,7 +3,6 @@ if has("nvim")
 endif
 
 call plug#begin()
-" Plug 'lewis6991/impatient.nvim'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' }
 Plug 'SmiteshP/nvim-gps'
@@ -43,6 +42,7 @@ Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'ray-x/lsp_signature.nvim'
 Plug 'j-hui/fidget.nvim'
+Plug 'fedepujol/move.nvim'
 
 call plug#end()
 
