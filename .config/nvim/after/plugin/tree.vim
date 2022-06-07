@@ -1,4 +1,4 @@
-nnoremap <C-t> :NvimTreeToggle<CR>
+nnoremap <C-p> :NvimTreeToggle<CR>
 
 lua << EOF
 require'nvim-tree'.setup {}
