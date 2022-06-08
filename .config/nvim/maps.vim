@@ -8,8 +8,8 @@ nnoremap d "_d
 nnoremap x "_x
 
 " Increment/decrement
-nnoremap + <C-a>
-nnoremap - <C-x>
+" nnoremap + <C-a>
+" nnoremap - <C-x>
 
 "-----------------------------
 

@@ -112,7 +112,7 @@ hi Visual  guifg=SlateBlue guibg=LightCyan gui=none
 let g:rainbow_active = 1
 
 let g:indentLine_char = '▏'
-let g:indentLine_fileTypeExclude = ['lsp-installer']
+let g:indentLine_fileTypeExclude = ['lsp-installer', 'help']
 
 "}}}
 
