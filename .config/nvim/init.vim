@@ -23,7 +23,8 @@ set nohlsearch
 set incsearch
 set noerrorbells
 set scrolloff=10
-set cmdheight=2
+set sidescrolloff=30
+set cmdheight=1
 
 set t_Co=256
 
@@ -111,6 +112,7 @@ hi Visual  guifg=SlateBlue guibg=LightCyan gui=none
 let g:rainbow_active = 1
 
 let g:indentLine_char = '▏'
+let g:indentLine_fileTypeExclude = ['lsp-installer']
 
 "}}}
 

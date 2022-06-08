@@ -47,6 +47,7 @@ Plug 'sbdchd/neoformat'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plug 'ray-x/lsp_signature.nvim'
 Plug 'fedepujol/move.nvim'
+Plug 'akinsho/toggleterm.nvim', { 'tag': 'v2.*' }
 
 call plug#end()
 

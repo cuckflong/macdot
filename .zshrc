@@ -19,6 +19,8 @@ eval "$(fnm env --use-on-cd)"
 # alias ls='ls --color -C'
 # alias la='ls -al'
 
+bindkey -e
+
 alias vim=nvim
 
 # map exa commands to normal ls commands
