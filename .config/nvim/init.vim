@@ -125,6 +125,6 @@ let g:VM_maps["Visual All"]        = '<leader>a'
 let g:VM_maps["Align"]             = '<leader>A'
 let g:VM_maps["Add Cursor Down"]   = '<C-j>'
 let g:VM_maps["Add Cursor Up"]     = '<C-k>'
-let g:VM_maps["Visual Cursors"]    = '<leader>c'
+let g:VM_maps["Visual Cursors"]    = '<leader>\c'
 
 " }}}

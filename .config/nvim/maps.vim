@@ -2,6 +2,8 @@
 
 " Delete without yank
 nnoremap <leader>d d
+nnoremap <leader>c c
+nnoremap c "_c
 nnoremap d "_d
 nnoremap x "_x
 
