@@ -3,6 +3,9 @@ require'nvim-treesitter.configs'.setup {
     enable = true,
     use_languagetree = true,
   },
+  autotag = {
+    enable = true,
+  }
   -- indent = {
   --   enable = true,
   -- }
