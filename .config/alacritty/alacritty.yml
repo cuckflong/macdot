@@ -286,7 +286,7 @@ shell:
   args:
     - --login
     - -c
-    - "tmux new -s 'ﮧ'"
+    - "tmux attach-session -t ﮧ || tmux new -s 'ﮧ'"
 
 # Startup directory
 #
@@ -596,6 +596,7 @@ shell:
 # If the same trigger is assigned to multiple actions, all of them are executed
 # in the order they were defined in.
 key_bindings:
+  - { key: N,        mods: Command, action: CreateNewWindow}
   - { key: Left,     mods: Alt,     chars: "\x1bb"                       } # Skip word left
   - { key: Right,    mods: Alt,     chars: "\x1bf"                       } # Skip word right
   - { key: Left,     mods: Command, chars: "\x01",   mode: AppCursor   } # Home
