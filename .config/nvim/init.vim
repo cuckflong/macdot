@@ -1,5 +1,6 @@
 " Fundamentals "{{{
 " ---------------------------------------------------------------------
+lua require('impatient')
 
 " init autocmd
 autocmd!
@@ -60,12 +61,12 @@ set nowrap "No Wrap lines
 set backspace=start,eol,indent
 set completeopt=menu,menuone,noselect
 
+
 " Finding files - Search down into subfolders
 set path+=**
 set wildignore+=*/node_modules/*
 
 "}}}
-
 
 " Highlights "{{{
 " ---------------------------------------------------------------------
@@ -75,10 +76,9 @@ set guicursor=i:block
 
 "}}}
 
-
 " Imports "{{{
 " ---------------------------------------------------------------------
-runtime ./plug.vim
+lua require('plugins')
 
 if has("unix")
   let s:uname = system("uname -s")
@@ -93,7 +93,6 @@ endif
 
 runtime ./maps.vim
 "}}}
-
 
 " Syntax theme "{{{
 " ---------------------------------------------------------------------
@@ -116,15 +115,29 @@ let g:indentLine_fileTypeExclude = ['lsp-installer', 'help']
 
 "}}}
 
-" Vim Visual Multi "{{{
-" ---------------------------------------------------------------------
+" undotree
+if has("persistent_undo")
+   let target_path = expand('~/.undodir')
 
-let g:VM_maps = {}
-let g:VM_maps["Select All"]        = '<leader>a'
-let g:VM_maps["Visual All"]        = '<leader>a'
-let g:VM_maps["Align"]             = '<leader>A'
-let g:VM_maps["Add Cursor Down"]   = '<C-j>'
-let g:VM_maps["Add Cursor Up"]     = '<C-k>'
-let g:VM_maps["Visual Cursors"]    = '<leader>\c'
+    if !isdirectory(target_path)
+        call mkdir(target_path, "p", 0700)
+    endif
 
-" }}}
+    let &undodir=target_path
+    set undofile
+endif
+
+let g:undotree_SetFocusWhenToggle=1
+
+" neoformat
+let g:neoformat_try_node_exe = 1
+
+augroup fmt
+  autocmd!
+  au BufWritePre * try | undojoin | Neoformat | catch /E790/ | Neoformat | endtry
+augroup END
+
+" telescope
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists('s:std_in') | Telescope find_files
+
