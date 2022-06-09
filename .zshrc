@@ -22,6 +22,7 @@ eval "$(fnm env --use-on-cd)"
 bindkey -e
 
 alias vim=nvim
+alias v=nvim
 
 # map exa commands to normal ls commands
 alias ll="exa --git -l"

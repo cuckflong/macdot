@@ -62,7 +62,7 @@ cmp.setup({
     ['<C-d>'] = cmp.mapping.scroll_docs(-4),
     ['<C-u>'] = cmp.mapping.scroll_docs(4),
     ['<C-c>'] = cmp.mapping.complete(),
-    ['<C-e>'] = cmp.mapping.abort(),
+    ['<ESC>'] = cmp.mapping.abort(),
     ['<CR>'] = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true }),
     ['<Tab>'] = cmp.mapping(function(fallback)
       if cmp.visible() then
