@@ -10,7 +10,7 @@ vim.cmd([[
 return require('packer').startup({function()
   use 'wbthomason/packer.nvim'
   use 'lewis6991/impatient.nvim'
-  use 'dstein64/vim-startuptime'
+  use 'nvim-lua/plenary.nvim'
 
   -- Status lines
   use {
@@ -46,7 +46,6 @@ return require('packer').startup({function()
       })
     end,
   }
-  use 'p00f/nvim-ts-rainbow'
   use {
     'kyazdani42/nvim-tree.lua',
     cmd = 'NvimTreeToggle',
@@ -101,10 +100,23 @@ return require('packer').startup({function()
       require 'configs.treesitter'
     end,
   }
+  use {
+    'windwp/nvim-ts-autotag',
+    config = function()
+      require('nvim-ts-autotag').setup()
+    end,
+  }
+  use 'p00f/nvim-ts-rainbow'
   use 'nvim-treesitter/nvim-treesitter-context'
   use 'JoosepAlviste/nvim-ts-context-commentstring'
 
-  -- Autocomplete
+  -- lsp
+  use {
+    'williamboman/nvim-lsp-installer',
+    config = function()
+      require 'configs.lsp-installer'
+    end,
+  }
   use {
     'neovim/nvim-lspconfig',
     after = "nvim-lsp-installer",
@@ -113,9 +125,32 @@ return require('packer').startup({function()
     end,
   }
   use {
-    'williamboman/nvim-lsp-installer',
+    'tami5/lspsaga.nvim',
     config = function()
-      require 'configs.lsp-installer'
+      require 'configs.lspsaga'
+    end,
+  }
+  use {
+    'ray-x/lsp_signature.nvim',
+    config = function()
+      require 'configs.lsp-signature'
+    end,
+  }
+
+  -- Autocomplete
+  use {
+    'rafamadriz/friendly-snippets',
+  }
+  use {
+    'hrsh7th/nvim-cmp',
+    config = function()
+      require 'configs.cmp'
+    end,
+  }
+  use {
+    'L3MON4D3/LuaSnip',
+    config = function()
+      require("luasnip.loaders.from_vscode").lazy_load()
     end,
   }
   use {
@@ -133,39 +168,6 @@ return require('packer').startup({function()
   use {
     'saadparwaiz1/cmp_luasnip',
   }
-  use {
-    'L3MON4D3/LuaSnip',
-    config = function()
-      require("luasnip.loaders.from_vscode").lazy_load()
-    end,
-  }
-  use {
-    'hrsh7th/nvim-cmp',
-    config = function()
-      require 'configs.cmp'
-    end,
-  }
-  use {
-    'tami5/lspsaga.nvim',
-    config = function()
-      require 'configs.lspsaga'
-    end,
-  }
-  use {
-    'windwp/nvim-ts-autotag',
-    config = function()
-      require('nvim-ts-autotag').setup()
-    end,
-  }
-  use {
-    'ray-x/lsp_signature.nvim',
-    config = function()
-      require 'configs.lsp-signature'
-    end,
-  }
-  use {
-    'rafamadriz/friendly-snippets',
-  }
 
   -- Utils
   use {
@@ -179,7 +181,6 @@ return require('packer').startup({function()
       require('nvim-autopairs').setup()
     end,
   }
-  use 'nvim-lua/plenary.nvim'
   use {
     'nvim-telescope/telescope.nvim',
     cmd = "Telescope",
