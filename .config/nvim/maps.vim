@@ -87,7 +87,7 @@ xmap S <Plug>Lightspeed_S
 " telescope
 nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
 nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
-nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
+nnoremap <C-p> <cmd>lua require('telescope.builtin').buffers()<cr>
 nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
 nnoremap <leader>fa <cmd>lua require('telescope.builtin').treesitter()<cr>
 nnoremap <leader>fs <cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<cr>
@@ -109,7 +109,7 @@ vnoremap <silent> <S-left> :MoveHBlock(-1)<CR>
 noremap <leader>nf :Neoformat<CR>
 
 " nvim-tree
-nnoremap <C-p> :NvimTreeToggle<CR>
+nnoremap <leader>tt :NvimTreeToggle<CR>
 
 " toggleterm
 nnoremap <C-\> :ToggleTerm<CR>
