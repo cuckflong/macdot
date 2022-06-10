@@ -22,14 +22,12 @@ return require('packer').startup({function()
   use {
     'akinsho/bufferline.nvim',
     tag = 'v2.*',
-    after = 'nvim-web-devicons',
     config = function()
       require 'configs.bufferline'
     end,
   }
   use {
     'SmiteshP/nvim-gps',
-    event = "CursorMoved",
     config = function()
       require 'configs.gps'
     end,
@@ -55,7 +53,6 @@ return require('packer').startup({function()
   }
   use {
     'norcalli/nvim-colorizer.lua',
-    event = 'BufRead',
     config = function()
       require('colorizer').setup()
     end,
@@ -94,7 +91,6 @@ return require('packer').startup({function()
   -- Syntax
   use {
     'nvim-treesitter/nvim-treesitter',
-    event = { 'BufRead', 'BufNewFile' },
     run = ':TSUpdate',
     config = function()
       require 'configs.treesitter'
@@ -194,8 +190,6 @@ return require('packer').startup({function()
   }
   use {
     'numToStr/Comment.nvim',
-    module = "Comment",
-    keys = { "gc", "gb" },
     config = function()
       require('Comment').setup()
     end,
