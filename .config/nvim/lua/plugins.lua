@@ -10,6 +10,7 @@ vim.cmd([[
 return require('packer').startup({function()
   use 'wbthomason/packer.nvim'
   use 'lewis6991/impatient.nvim'
+  use 'dstein64/vim-startuptime'
 
   -- Status lines
   use {
@@ -21,14 +22,16 @@ return require('packer').startup({function()
   use {
     'akinsho/bufferline.nvim',
     tag = 'v2.*',
+    after = 'nvim-web-devicons',
     config = function()
       require 'configs.bufferline'
     end,
   }
   use {
     'SmiteshP/nvim-gps',
+    event = "CursorMoved",
     config = function()
-      require("nvim-gps").setup()
+      require 'configs.gps'
     end,
   }
 
@@ -53,6 +56,7 @@ return require('packer').startup({function()
   }
   use {
     'norcalli/nvim-colorizer.lua',
+    event = 'BufRead',
     config = function()
       require('colorizer').setup()
     end,
@@ -91,12 +95,14 @@ return require('packer').startup({function()
   -- Syntax
   use {
     'nvim-treesitter/nvim-treesitter',
+    event = { 'BufRead', 'BufNewFile' },
     run = ':TSUpdate',
     config = function()
       require 'configs.treesitter'
     end,
   }
   use 'nvim-treesitter/nvim-treesitter-context'
+  use 'JoosepAlviste/nvim-ts-context-commentstring'
 
   -- Autocomplete
   use {
@@ -112,17 +118,30 @@ return require('packer').startup({function()
       require 'configs.lsp-installer'
     end,
   }
-  use 'hrsh7th/cmp-nvim-lsp'
-  use 'hrsh7th/cmp-buffer'
-  use 'hrsh7th/cmp-path'
-  use 'hrsh7th/cmp-cmdline'
+  use {
+    'hrsh7th/cmp-nvim-lsp',
+  }
+  use {
+    'hrsh7th/cmp-buffer',
+  }
+  use {
+    'hrsh7th/cmp-path',
+  }
+  use {
+    'hrsh7th/cmp-cmdline',
+  }
+  use {
+    'hrsh7th/cmp-nvim-lua',
+  }
   use {
     'saadparwaiz1/cmp_luasnip',
+  }
+  use {
+    'L3MON4D3/LuaSnip',
     config = function()
       require("luasnip.loaders.from_vscode").lazy_load()
     end,
   }
-  use 'L3MON4D3/LuaSnip'
   use {
     'hrsh7th/nvim-cmp',
     config = function()
@@ -141,6 +160,15 @@ return require('packer').startup({function()
       require('nvim-ts-autotag').setup()
     end,
   }
+  use {
+    'ray-x/lsp_signature.nvim',
+    config = function()
+      require 'configs.lsp-signature'
+    end,
+  }
+  use {
+    'rafamadriz/friendly-snippets',
+  }
 
   -- Utils
   use {
@@ -157,6 +185,7 @@ return require('packer').startup({function()
   use 'nvim-lua/plenary.nvim'
   use {
     'nvim-telescope/telescope.nvim',
+    cmd = "Telescope",
     config = function()
       require 'configs.telescope'
     end,
@@ -167,6 +196,8 @@ return require('packer').startup({function()
   }
   use {
     'numToStr/Comment.nvim',
+    module = "Comment",
+    keys = { "gc", "gb" },
     config = function()
       require('Comment').setup()
     end,
@@ -188,13 +219,6 @@ return require('packer').startup({function()
   use 'tpope/vim-fugitive'
   use 'mbbill/undotree'
   use 'sbdchd/neoformat'
-  use {
-    'ray-x/lsp_signature.nvim',
-    config = function()
-      require 'configs.lsp-signature'
-    end,
-  }
-  use 'rafamadriz/friendly-snippets'
 
 end,
 config = {

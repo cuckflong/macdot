@@ -123,3 +123,6 @@ xnoremap { <Cmd>lua Scroll('{')<CR>
 nnoremap } <Cmd>lua Scroll('}')<CR>
 xnoremap } <Cmd>lua Scroll('}')<CR>
 
+" comment
+nnoremap <leader>/ <Cmd>lua require('Comment.api').toggle_current_linewise()<CR>
+

@@ -80,26 +80,17 @@ set guicursor=i:block
 " ---------------------------------------------------------------------
 lua require('plugins')
 
-if has("unix")
-  let s:uname = system("uname -s")
-  " Do Mac stuff
-  if s:uname == "Darwin\n"
-    runtime ./macos.vim
-  endif
-endif
-if has('win32')
-  runtime ./windows.vim
-endif
+" Do Mac stuff
+runtime ./macos.vim
+
+" Do Windows stuff
+" runtime ./windows.vim
 
 runtime ./maps.vim
 "}}}
 
 " Syntax theme "{{{
 " ---------------------------------------------------------------------
-
-" let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#nvimlsp#enabled = 1
 
 let g:onedark_config = {
     \ 'style': 'deep',
@@ -108,23 +99,20 @@ let g:onedark_config = {
 colorscheme onedark
 hi Visual  guifg=SlateBlue guibg=LightCyan gui=none
 
-let g:rainbow_active = 1
-
-let g:indentLine_char = '▏'
 let g:indentLine_fileTypeExclude = ['lsp-installer', 'help']
 
 "}}}
 
 " undotree
 if has("persistent_undo")
-   let target_path = expand('~/.undodir')
+  let target_path = expand('~/.undodir')
 
-    if !isdirectory(target_path)
-        call mkdir(target_path, "p", 0700)
-    endif
+  if !isdirectory(target_path)
+    call mkdir(target_path, "p", 0700)
+  endif
 
-    let &undodir=target_path
-    set undofile
+  let &undodir=target_path
+  set undofile
 endif
 
 let g:undotree_SetFocusWhenToggle=1
@@ -140,4 +128,7 @@ augroup END
 " telescope
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists('s:std_in') | Telescope find_files
+
+" Don't auto commenting new lines
+autocmd BufEnter * set fo-=c fo-=r fo-=o
 
