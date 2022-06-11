@@ -43,10 +43,14 @@ require('lualine').setup {
           if next(clients) == nil then
             return msg
           end
-          for _, client in ipairs(clients) do
+          for i, client in ipairs(clients) do
             local filetypes = client.config.filetypes
             if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
-              return client.name
+              if i == 1 then
+                msg = client.name
+              else
+                msg = msg .. ", " .. client.name
+              end
             end
           end
           return msg

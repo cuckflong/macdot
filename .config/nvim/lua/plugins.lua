@@ -82,9 +82,9 @@ return require('packer').startup({function()
     end,
   }
   use {
-    'declancm/cinnamon.nvim',
+    'karb94/neoscroll.nvim',
     config = function()
-      require('cinnamon').setup()
+      require 'configs.neoscroll'
     end,
   }
 
@@ -132,6 +132,12 @@ return require('packer').startup({function()
       require 'configs.lsp-signature'
     end,
   }
+  -- use {
+  --   'jose-elias-alvarez/null-ls.nvim',
+  --   config = function()
+  --     require 'configs.null-ls'
+  --   end,
+  -- }
 
   -- Autocomplete
   use {
