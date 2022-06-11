@@ -37,20 +37,17 @@ require('lualine').setup {
     lualine_x = {
       {
         function()
-          local msg = 'No Active Lsp'
-          local buf_ft = vim.api.nvim_buf_get_option(0, 'filetype')
-          local clients = vim.lsp.get_active_clients()
+          -- local clients = vim.lsp.get_active_clients()
+          local clients = vim.lsp.buf_get_clients()
           if next(clients) == nil then
-            return msg
+            return 'No Active Lsp'
           end
-          for i, client in ipairs(clients) do
-            local filetypes = client.config.filetypes
-            if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
-              if i == 1 then
-                msg = client.name
-              else
-                msg = msg .. ", " .. client.name
-              end
+          local msg = ''
+          for _, client in pairs(clients) do
+            if msg == '' then
+              msg = client.name
+            else
+              msg = msg .. ", " .. client.name
             end
           end
           return msg

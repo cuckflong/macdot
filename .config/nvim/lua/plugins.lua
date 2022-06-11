@@ -217,6 +217,18 @@ return require('packer').startup({function()
       require 'configs.which-key'
     end,
   }
+  use {
+    'antoinemadec/FixCursorHold.nvim',
+    config = function()
+      vim.g.cursorhold_updatetime = 100
+    end,
+  }
+  use {
+    "folke/trouble.nvim",
+    config = function()
+      require("trouble").setup()
+    end,
+  }
 
   -- Dev
   use 'editorconfig/editorconfig-vim'

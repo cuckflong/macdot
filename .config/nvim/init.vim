@@ -125,10 +125,6 @@ augroup fmt
   au BufWritePre * try | undojoin | Neoformat | catch /E790/ | Neoformat | endtry
 augroup END
 
-" telescope
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists('s:std_in') | Telescope find_files
-
 " Don't auto commenting new lines
 autocmd BufEnter * set fo-=c fo-=r fo-=o
 

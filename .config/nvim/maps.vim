@@ -120,3 +120,11 @@ nnoremap <leader>u :UndotreeToggle<CR>
 " comment
 nnoremap <leader>/ <Cmd>lua require('Comment.api').toggle_current_linewise()<CR>
 
+" trouble
+nnoremap <leader>xx <cmd>TroubleToggle<cr>
+nnoremap <leader>xw <cmd>TroubleToggle workspace_diagnostics<cr>
+nnoremap <leader>xd <cmd>TroubleToggle document_diagnostics<cr>
+nnoremap <leader>xq <cmd>TroubleToggle quickfix<cr>
+nnoremap <leader>xl <cmd>TroubleToggle loclist<cr>
+nnoremap <leader>xr <cmd>TroubleToggle lsp_references<cr>
+
