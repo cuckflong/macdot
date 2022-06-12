@@ -37,20 +37,27 @@ require('lualine').setup {
     lualine_x = {
       {
         function()
-          -- local clients = vim.lsp.get_active_clients()
           local clients = vim.lsp.buf_get_clients()
+          local null_ls = require('null-ls')
           if next(clients) == nil then
             return 'No Active Lsp'
           end
-          local msg = ''
+          local msg = {}
+          local ft = vim.bo.filetype
+          local sources
           for _, client in pairs(clients) do
-            if msg == '' then
-              msg = client.name
+            if client.name == 'null-ls' then
+              sources = null_ls.get_sources()
+              for _, source in pairs(sources) do
+                if source.filetypes[ft] then
+                  table.insert(msg, source.name)
+                end
+              end
             else
-              msg = msg .. ", " .. client.name
+              table.insert(msg, client.name)
             end
           end
-          return msg
+          return table.concat(msg, ', ')
         end,
         icon = ' LSP:',
       },
