@@ -132,12 +132,12 @@ return require('packer').startup({function()
       require 'configs.lsp-signature'
     end,
   }
-  -- use {
-  --   'jose-elias-alvarez/null-ls.nvim',
-  --   config = function()
-  --     require 'configs.null-ls'
-  --   end,
-  -- }
+  use {
+    'jose-elias-alvarez/null-ls.nvim',
+    config = function()
+      require 'configs.null-ls'
+    end,
+  }
 
   -- Autocomplete
   use {
@@ -174,7 +174,7 @@ return require('packer').startup({function()
   -- Utils
   use {
     'mg979/vim-visual-multi',
-    branch = 'master'
+    branch = 'master',
   }
   use 'tpope/vim-surround'
   use {
@@ -196,11 +196,15 @@ return require('packer').startup({function()
   }
   use {
     'numToStr/Comment.nvim',
+    module = "Comment",
+    keys = { "gc", "gb" },
     config = function()
       require('Comment').setup()
     end,
   }
-  use 'ggandor/lightspeed.nvim'
+  use {
+    'ggandor/lightspeed.nvim',
+  }
   use 'wellle/targets.vim'
   use 'fedepujol/move.nvim'
   use {

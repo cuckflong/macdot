@@ -8,7 +8,7 @@ local lspconfig = require('lspconfig')
 local servers = { 'bashls', 'vimls', 'pyright', 'tsserver', 'rnix', 'solidity_ls', 'eslint', 'gopls', 'diagnosticls', 'dotls', 'html', 'zk', 'dockerls', 'rust_analyzer', 'yamlls', 'awk_ls', 'jsonls', 'sumneko_lua', 'solc' }
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
-  -- on_attach = my_custom_on_attach,
+  -- on_attach = your_function,
   capabilities = capabilities,
 }
 end
