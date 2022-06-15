@@ -1,9 +1,9 @@
 local options = {
-  floating_window = true,
-  hint_enable = false,
-  handler_opts = {
-     border = "rounded", -- double, single, shadow, none
-  },
+	floating_window = true,
+	hint_enable = false,
+	handler_opts = {
+		border = "rounded", -- double, single, shadow, none
+	},
 }
 
-require "lsp_signature".setup(options)
+require("lsp_signature").setup(options)
