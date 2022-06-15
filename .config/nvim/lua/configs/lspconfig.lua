@@ -26,6 +26,7 @@ local servers = {
 	"sumneko_lua",
 	"solc",
 }
+
 for _, lsp in ipairs(servers) do
 	lspconfig[lsp].setup({
 		-- on_attach = your_function,
