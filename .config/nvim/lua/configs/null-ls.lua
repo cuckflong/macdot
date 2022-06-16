@@ -8,6 +8,20 @@ local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
 local sources = {
 	-- formatting
+	-- python
+	null_formatting.black,
+	null_formatting.isort,
+	-- go
+	null_formatting.gofmt,
+	null_formatting.goimports,
+	null_formatting.golines,
+	-- lua
+	null_formatting.stylua,
+	-- general
+	null_formatting.prettier.with({
+		prefer_local = "node_modules/.bin",
+		extra_filetypes = { "solidity" },
+	}),
 
 	-- diagnostics
 	null_diagnostics.solhint.with({
@@ -19,17 +33,6 @@ local sources = {
 
 require("null-ls").setup({
 	sources = sources,
-	update_in_insert = false,
-	on_attach = function(client, bufnr)
-		if client.supports_method("textDocument/formatting") then
-			vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
-			vim.api.nvim_create_autocmd("BufWritePre", {
-				group = augroup,
-				buffer = bufnr,
-				callback = function()
-					vim.lsp.buf.formatting_sync()
-				end,
-			})
-		end
-	end,
+	update_in_insert = true,
+	on_attach = require("lsp-format").on_attach,
 })

@@ -105,8 +105,8 @@ nnoremap <silent> <S-left> :MoveHChar(-1)<CR>
 vnoremap <silent> <S-right> :MoveHBlock(1)<CR>
 vnoremap <silent> <S-left> :MoveHBlock(-1)<CR>
 
-" neoformat
-noremap <leader>nf :Neoformat<CR>
+" format
+noremap <leader>m :Format<CR>
 
 " nvim-tree
 nnoremap <leader>tt :NvimTreeToggle<CR>

@@ -117,14 +117,6 @@ endif
 
 let g:undotree_SetFocusWhenToggle=1
 
-" neoformat
-let g:neoformat_try_node_exe = 1
-
-augroup fmt
-  autocmd!
-  au BufWritePre * try | undojoin | Neoformat | catch /E790/ | Neoformat | endtry
-augroup END
-
 " Don't auto commenting new lines
 autocmd BufEnter * set fo-=c fo-=r fo-=o
 

@@ -116,7 +116,10 @@ return require("packer").startup({
 		})
 		use({
 			"neovim/nvim-lspconfig",
-			after = "nvim-lsp-installer",
+			after = {
+				"lsp-format.nvim",
+				"nvim-lsp-installer",
+			},
 			config = function()
 				require("configs.lspconfig")
 			end,
@@ -135,8 +138,17 @@ return require("packer").startup({
 		})
 		use({
 			"jose-elias-alvarez/null-ls.nvim",
+			after = {
+				"lsp-format.nvim",
+			},
 			config = function()
 				require("configs.null-ls")
+			end,
+		})
+		use({
+			"lukas-reineke/lsp-format.nvim",
+			config = function()
+				require("configs.lsp-format")
 			end,
 		})
 
@@ -239,7 +251,6 @@ return require("packer").startup({
 		use("editorconfig/editorconfig-vim")
 		use("tpope/vim-fugitive")
 		use("mbbill/undotree")
-		use("sbdchd/neoformat")
 	end,
 	config = {
 		profile = {
