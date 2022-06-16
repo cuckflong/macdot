@@ -27,12 +27,13 @@ local sources = {
 	null_diagnostics.solhint.with({
 		prefer_local = "node_modules/.bin",
 	}),
+	null_diagnostics.flake8,
 
 	-- code_actions
 }
 
 require("null-ls").setup({
 	sources = sources,
-	update_in_insert = true,
+	update_in_insert = false,
 	on_attach = require("lsp-format").on_attach,
 })
