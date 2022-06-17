@@ -1,6 +1,4 @@
 ---@diagnostic disable: undefined-global
-local gps = require("nvim-gps")
-
 require("lualine").setup({
 	options = {
 		icons_enabled = true,
@@ -33,7 +31,7 @@ require("lualine").setup({
 				},
 			},
 		},
-		lualine_c = { "filename", { gps.get_location, cond = gps.is_available } },
+		lualine_c = { "filename" },
 		lualine_x = {
 			{
 				function()
@@ -61,8 +59,8 @@ require("lualine").setup({
 				end,
 				icon = " LSP:",
 			},
-			"encoding",
-			"fileformat",
+			-- "encoding",
+			-- "fileformat",
 			"filetype",
 		},
 		lualine_y = { "progress" },

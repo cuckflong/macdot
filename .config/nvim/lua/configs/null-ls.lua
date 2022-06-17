@@ -9,7 +9,9 @@ local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 local sources = {
 	-- formatting
 	-- python
-	null_formatting.black,
+	null_formatting.black.with({
+		extra_args = { "--preview" },
+	}),
 	null_formatting.isort,
 	-- go
 	null_formatting.gofmt,
@@ -27,7 +29,9 @@ local sources = {
 	null_diagnostics.solhint.with({
 		prefer_local = "node_modules/.bin",
 	}),
-	null_diagnostics.flake8,
+	null_diagnostics.flake8.with({
+		extra_args = { "--max-line-length", "120" },
+	}),
 
 	-- code_actions
 }

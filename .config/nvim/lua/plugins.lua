@@ -27,12 +27,6 @@ return require("packer").startup({
 				require("configs.bufferline")
 			end,
 		})
-		use({
-			"SmiteshP/nvim-gps",
-			config = function()
-				require("configs.gps")
-			end,
-		})
 
 		-- Themes
 		use("navarasu/onedark.nvim")
@@ -242,6 +236,7 @@ return require("packer").startup({
 		})
 		use({
 			"folke/trouble.nvim",
+			cmd = "TroubleToggle",
 			config = function()
 				require("trouble").setup()
 			end,
