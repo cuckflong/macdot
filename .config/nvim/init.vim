@@ -20,7 +20,7 @@ set noswapfile
 set nowritebackup
 set updatetime=100
 set shortmess+=c
-set nohlsearch
+" set nohlsearch
 set incsearch
 set noerrorbells
 set scrolloff=10
@@ -98,6 +98,9 @@ let g:onedark_config = {
 \}
 colorscheme onedark
 hi Visual  guifg=SlateBlue guibg=LightCyan gui=none
+hi VertSplit guibg=bg guifg=bg
+hi ScrollView guibg=LightBlue 
+hi Search guibg=LightGray guifg=Black
 
 let g:indentLine_fileTypeExclude = ['lsp-installer', 'help']
 

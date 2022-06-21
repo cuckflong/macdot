@@ -7,7 +7,7 @@ require("lualine").setup({
 		section_separators = { left = "", right = "" },
 		disabled_filetypes = { "packer" },
 		always_divide_middle = true,
-		globalstatus = false,
+		globalstatus = true,
 	},
 	sections = {
 		lualine_a = {

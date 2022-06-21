@@ -53,9 +53,9 @@ return require("packer").startup({
 			end,
 		})
 		use({
-			"petertriho/nvim-scrollbar",
+			"lewis6991/satellite.nvim",
 			config = function()
-				require("scrollbar").setup()
+				require("configs.satellite")
 			end,
 		})
 		use({
@@ -239,6 +239,12 @@ return require("packer").startup({
 			cmd = "TroubleToggle",
 			config = function()
 				require("trouble").setup()
+			end,
+		})
+		use({
+			"kevinhwang91/nvim-hlslens",
+			config = function()
+				require("configs.hlslens")
 			end,
 		})
 
