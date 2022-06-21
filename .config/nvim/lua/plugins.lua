@@ -247,6 +247,9 @@ return require("packer").startup({
 				require("configs.hlslens")
 			end,
 		})
+		use({
+			"RRethy/vim-illuminate",
+		})
 
 		-- Dev
 		use("editorconfig/editorconfig-vim")

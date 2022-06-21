@@ -104,6 +104,13 @@ hi Search guibg=#5c75ad guifg=White
 
 let g:indentLine_fileTypeExclude = ['lsp-installer', 'help']
 
+let g:Illuminate_ftblacklist = ['NvimTree']
+let g:Illuminate_delay = 300
+
+augroup illuminate_augroup
+  autocmd VimEnter * hi link illuminatedWord Search
+augroup END
+
 "}}}
 
 " undotree

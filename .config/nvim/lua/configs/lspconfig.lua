@@ -6,6 +6,7 @@ local lspconfig = require("lspconfig")
 
 local on_attach = function(client)
 	require("lsp-format").on_attach(client)
+	-- require("illuminate").on_attach(client)
 end
 
 -- Enable some language servers with the additional completion capabilities offered by nvim-cmp
