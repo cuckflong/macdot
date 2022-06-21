@@ -99,8 +99,8 @@ let g:onedark_config = {
 colorscheme onedark
 hi Visual  guifg=SlateBlue guibg=LightCyan gui=none
 hi VertSplit guibg=bg guifg=bg
-hi ScrollView guibg=LightBlue 
-hi Search guibg=LightGray guifg=Black
+hi ScrollView guibg=#525252
+hi Search guibg=#5c75ad guifg=White
 
 let g:indentLine_fileTypeExclude = ['lsp-installer', 'help']
 
