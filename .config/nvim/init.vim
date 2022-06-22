@@ -108,7 +108,8 @@ let g:Illuminate_ftblacklist = ['NvimTree']
 let g:Illuminate_delay = 300
 
 augroup illuminate_augroup
-  autocmd VimEnter * hi link illuminatedWord Search
+  " autocmd VimEnter * hi link illuminatedWord Search
+  autocmd VimEnter * hi illuminatedWord cterm=underline gui=underline
 augroup END
 
 "}}}
