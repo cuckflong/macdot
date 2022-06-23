@@ -175,6 +175,7 @@ setopt incappendhistory #Immediately append to the history file, not just when a
 
 source <(kubectl completion zsh)
 
+eval $(thefuck --alias)
 eval "$(starship init zsh)"
 
 [ -f $HOME/.config/.fzf.zsh ] && source $HOME/.config/.fzf.zsh

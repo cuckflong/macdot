@@ -250,6 +250,9 @@ return require("packer").startup({
 		use({
 			"RRethy/vim-illuminate",
 		})
+		use({
+			"tpope/vim-repeat",
+		})
 
 		-- Dev
 		use("editorconfig/editorconfig-vim")

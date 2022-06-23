@@ -27,6 +27,8 @@ map <leader>w<left> <C-w><
 map <leader>w<up> <C-w>+
 map <leader>w<down> <C-w>-
 map <leader>w<right> <C-w>>
+" Close window
+map <leader>wc <C-w>c
 
 " Buffers
 " Open a new empty buffer
