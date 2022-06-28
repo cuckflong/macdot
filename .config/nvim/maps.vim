@@ -130,6 +130,7 @@ nnoremap <leader>u :UndotreeToggle<CR>
 
 " comment
 nnoremap <leader>/ <Cmd>lua require('Comment.api').toggle_current_linewise()<CR>
+vnoremap <leader>/ <Plug>(comment_toggle_linewise_visual)
 
 " trouble
 nnoremap <leader>xx <cmd>TroubleToggle<cr>
