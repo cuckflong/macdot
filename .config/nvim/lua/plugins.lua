@@ -22,6 +22,7 @@ return require("packer").startup({
 		})
 		use({
 			"akinsho/bufferline.nvim",
+			event = "BufWinEnter",
 			tag = "v2.*",
 			config = function()
 				require("configs.bufferline")
@@ -61,6 +62,7 @@ return require("packer").startup({
 		})
 		use({
 			"lewis6991/gitsigns.nvim",
+			event = "BufRead",
 			config = function()
 				require("gitsigns").setup()
 			end,
@@ -73,12 +75,14 @@ return require("packer").startup({
 		})
 		use({
 			"lukas-reineke/indent-blankline.nvim",
+			event = "BufRead",
 			config = function()
 				require("configs.indent-blankline")
 			end,
 		})
 		use({
 			"karb94/neoscroll.nvim",
+			event = "WinScrolled",
 			config = function()
 				require("configs.neoscroll")
 			end,
@@ -94,13 +98,17 @@ return require("packer").startup({
 		})
 		use({
 			"windwp/nvim-ts-autotag",
+			event = "InsertEnter",
 			config = function()
 				require("nvim-ts-autotag").setup()
 			end,
 		})
 		use("p00f/nvim-ts-rainbow")
 		use("nvim-treesitter/nvim-treesitter-context")
-		use("JoosepAlviste/nvim-ts-context-commentstring")
+		use({
+			"JoosepAlviste/nvim-ts-context-commentstring",
+			event = "BufRead",
+		})
 
 		-- lsp
 		use({
@@ -127,6 +135,7 @@ return require("packer").startup({
 		})
 		use({
 			"ray-x/lsp_signature.nvim",
+			event = "BufRead",
 			config = function()
 				require("configs.lsp-signature")
 			end,
@@ -184,7 +193,9 @@ return require("packer").startup({
 			"mg979/vim-visual-multi",
 			branch = "master",
 		})
-		use("tpope/vim-surround")
+		use({
+			"tpope/vim-surround",
+		})
 		use({
 			"windwp/nvim-autopairs",
 			config = function()
@@ -204,14 +215,14 @@ return require("packer").startup({
 		})
 		use({
 			"numToStr/Comment.nvim",
-			module = "Comment",
-			keys = { "gc", "gb" },
+			event = "BufRead",
 			config = function()
 				require("Comment").setup()
 			end,
 		})
 		use({
 			"ggandor/lightspeed.nvim",
+			event = "BufRead",
 		})
 		use("wellle/targets.vim")
 		use("fedepujol/move.nvim")
@@ -225,6 +236,7 @@ return require("packer").startup({
 		})
 		use({
 			"folke/which-key.nvim",
+			event = "BufWinEnter",
 			config = function()
 				require("configs.which-key")
 			end,
@@ -256,22 +268,51 @@ return require("packer").startup({
 		})
 		use({
 			"ethanholz/nvim-lastplace",
+			event = "BufRead",
 			config = function()
 				require("nvim-lastplace").setup()
 			end,
 		})
 		use({
 			"nacro90/numb.nvim",
+			event = "BufRead",
 			config = function()
-				require("numb").setup()
+				require("numb").setup({
+					show_numbers = true,
+					show_cursorline = true,
+				})
 			end,
 		})
-		use({ "andymass/vim-matchup" })
+		use({
+			"andymass/vim-matchup",
+			event = "CursorMoved",
+			config = function()
+				vim.g.matchup_matchparen_offscreen = { method = "popup" }
+			end,
+		})
 
 		-- Dev
 		use("editorconfig/editorconfig-vim")
-		use("tpope/vim-fugitive")
-		use("mbbill/undotree")
+		use({
+			"tpope/vim-fugitive",
+			cmd = {
+				"G",
+				"Git",
+				"Gdiffsplit",
+				"Gread",
+				"Gwrite",
+				"Ggrep",
+				"GMove",
+				"GDelete",
+				"GBrowse",
+				"GRemove",
+				"GRename",
+				"Glgrep",
+				"Gedit",
+			},
+			ft = { "fugitive" },
+		})
+		use({ "mbbill/undotree" })
 	end,
 	config = {
 		profile = {

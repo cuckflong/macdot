@@ -102,8 +102,6 @@ hi VertSplit guibg=bg guifg=bg
 hi ScrollView guibg=#525252
 hi Search guibg=#5c75ad guifg=White
 
-let g:indentLine_fileTypeExclude = ['lsp-installer', 'help']
-
 let g:Illuminate_ftblacklist = ['NvimTree']
 let g:Illuminate_delay = 300
 

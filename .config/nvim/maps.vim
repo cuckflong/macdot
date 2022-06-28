@@ -5,11 +5,20 @@ nnoremap <SPACE> <Nop>
 let mapleader=" "
 
 " Delete without yank
-nnoremap <leader>d d
-nnoremap <leader>c c
-nnoremap c "_c
-nnoremap d "_d
 nnoremap x "_x
+nnoremap d "_d
+nnoremap D "_D
+vnoremap d "_d
+nnoremap c "_c
+nnoremap C "_C
+vnoremap c "_c
+
+nnoremap <leader>d d
+nnoremap <leader>D D
+vnoremap <leader>d d
+nnoremap <leader>c c
+nnoremap <leader>C C
+vnoremap <leader>c c
 
 "------------------------------
 " Windows
