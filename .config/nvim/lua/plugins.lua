@@ -54,6 +54,7 @@ return require("packer").startup({
 		})
 		use({
 			"lewis6991/satellite.nvim",
+			commit = "3928877a206f2df1dd28438eeccd20d6fa6efcd9",
 			config = function()
 				require("configs.satellite")
 			end,
@@ -253,6 +254,19 @@ return require("packer").startup({
 		use({
 			"tpope/vim-repeat",
 		})
+		use({
+			"ethanholz/nvim-lastplace",
+			config = function()
+				require("nvim-lastplace").setup()
+			end,
+		})
+		use({
+			"nacro90/numb.nvim",
+			config = function()
+				require("numb").setup()
+			end,
+		})
+		use({ "andymass/vim-matchup" })
 
 		-- Dev
 		use("editorconfig/editorconfig-vim")
