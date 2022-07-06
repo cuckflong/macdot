@@ -221,8 +221,11 @@ return require("packer").startup({
 			end,
 		})
 		use({
-			"ggandor/lightspeed.nvim",
+			"ggandor/leap.nvim",
 			event = "BufRead",
+			config = function()
+				require("leap").set_default_keymaps()
+			end,
 		})
 		use("wellle/targets.vim")
 		use("fedepujol/move.nvim")

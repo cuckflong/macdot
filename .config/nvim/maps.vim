@@ -93,7 +93,6 @@ let g:VM_maps["Align"]             = '<leader>A'
 let g:VM_maps["Add Cursor Down"]   = '<C-j>'
 let g:VM_maps["Add Cursor Up"]     = '<C-k>'
 let g:VM_maps["Visual Cursors"]    = '\c'
-xmap S <Plug>Lightspeed_S
 
 " telescope
 nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
