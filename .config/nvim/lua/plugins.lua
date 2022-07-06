@@ -295,7 +295,7 @@ return require("packer").startup({
 		})
 
 		-- Dev
-		use({ "gpanders/editorconfig.nvim" })
+		use({ "editorconfig/editorconfig-vim" })
 		use({
 			"tpope/vim-fugitive",
 			cmd = {
