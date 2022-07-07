@@ -109,6 +109,7 @@ return require("packer").startup({
 			"JoosepAlviste/nvim-ts-context-commentstring",
 			event = "BufRead",
 		})
+		-- use({ "kevinhwang91/nvim-ufo", requires = "kevinhwang91/promise-async" })
 
 		-- lsp
 		use({
@@ -193,7 +194,10 @@ return require("packer").startup({
 			branch = "master",
 		})
 		use({
-			"tpope/vim-surround",
+			"kylechui/nvim-surround",
+			config = function()
+				require("nvim-surround").setup({})
+			end,
 		})
 		use({
 			"windwp/nvim-autopairs",
@@ -315,6 +319,13 @@ return require("packer").startup({
 			ft = { "fugitive" },
 		})
 		use({ "mbbill/undotree" })
+		use({
+			"folke/todo-comments.nvim",
+			requires = "nvim-lua/plenary.nvim",
+			config = function()
+				require("todo-comments").setup({})
+			end,
+		})
 	end,
 	config = {
 		profile = {
