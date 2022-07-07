@@ -128,14 +128,13 @@ return require("packer").startup({
 			end,
 		})
 		use({
-			"tami5/lspsaga.nvim",
+			"kkharji/lspsaga.nvim",
 			config = function()
 				require("configs.lspsaga")
 			end,
 		})
 		use({
 			"ray-x/lsp_signature.nvim",
-			event = "BufRead",
 			config = function()
 				require("configs.lsp-signature")
 			end,
