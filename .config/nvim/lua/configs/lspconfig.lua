@@ -4,9 +4,13 @@
 local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
 local lspconfig = require("lspconfig")
 
+capabilities.textDocument.foldingRange = {
+	dynamicRegistration = false,
+	lineFoldingOnly = true,
+}
+
 local on_attach = function(client)
 	require("lsp-format").on_attach(client)
-	-- require("illuminate").on_attach(client)
 end
 
 -- Enable some language servers with the additional completion capabilities offered by nvim-cmp
@@ -38,3 +42,5 @@ for _, lsp in ipairs(servers) do
 		capabilities = capabilities,
 	})
 end
+
+require("ufo").setup({})

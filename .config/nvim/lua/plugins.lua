@@ -109,7 +109,13 @@ return require("packer").startup({
 			"JoosepAlviste/nvim-ts-context-commentstring",
 			event = "BufRead",
 		})
-		-- use({ "kevinhwang91/nvim-ufo", requires = "kevinhwang91/promise-async" })
+		use({
+			"kevinhwang91/nvim-ufo",
+			requires = "kevinhwang91/promise-async",
+			config = function()
+				require("configs.ufo")
+			end,
+		})
 
 		-- lsp
 		use({
@@ -296,27 +302,12 @@ return require("packer").startup({
 				vim.g.matchup_matchparen_offscreen = { method = "popup" }
 			end,
 		})
+		use({ "sindrets/diffview.nvim", requires = "nvim-lua/plenary.nvim" })
 
 		-- Dev
 		use({ "editorconfig/editorconfig-vim" })
 		use({
 			"tpope/vim-fugitive",
-			cmd = {
-				"G",
-				"Git",
-				"Gdiffsplit",
-				"Gread",
-				"Gwrite",
-				"Ggrep",
-				"GMove",
-				"GDelete",
-				"GBrowse",
-				"GRemove",
-				"GRename",
-				"Glgrep",
-				"Gedit",
-			},
-			ft = { "fugitive" },
 		})
 		use({ "mbbill/undotree" })
 		use({
