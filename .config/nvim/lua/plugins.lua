@@ -119,16 +119,45 @@ return require("packer").startup({
 
 		-- lsp
 		use({
-			"williamboman/nvim-lsp-installer",
+			"williamboman/mason.nvim",
 			config = function()
-				require("configs.lsp-installer")
+				require("mason").setup()
+			end,
+		})
+		use({
+			"williamboman/mason-lspconfig.nvim",
+			config = function()
+				require("mason-lspconfig").setup({
+					ensure_installed = {
+						"bashls",
+						"vimls",
+						"pyright",
+						"tsserver",
+						"rnix",
+						"solidity_ls",
+						"eslint",
+						"gopls",
+						"diagnosticls",
+						"dotls",
+						"html",
+						"zk",
+						"dockerls",
+						"rust_analyzer",
+						"yamlls",
+						"awk_ls",
+						"jsonls",
+						"sumneko_lua",
+						"solc",
+					},
+					automatic_installation = true,
+				})
 			end,
 		})
 		use({
 			"neovim/nvim-lspconfig",
 			after = {
 				"lsp-format.nvim",
-				"nvim-lsp-installer",
+				"mason.nvim",
 			},
 			config = function()
 				require("configs.lspconfig")
