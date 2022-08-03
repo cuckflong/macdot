@@ -196,3 +196,6 @@ unset __conda_setup
 # <<< conda initialize <<<
 
 compinit conda
+
+# opam configuration
+[[ ! -r /Users/cuckflong/.opam/opam-init/init.zsh ]] || source /Users/cuckflong/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null

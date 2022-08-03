@@ -60,6 +60,12 @@ return require("packer").startup({
 				require("configs.satellite")
 			end,
 		})
+		-- use({
+		-- 	"petertriho/nvim-scrollbar",
+		-- 	config = function()
+		-- 		require("scrollbar").setup()
+		-- 	end,
+		-- })
 		use({
 			"lewis6991/gitsigns.nvim",
 			event = "BufRead",
@@ -164,7 +170,8 @@ return require("packer").startup({
 			end,
 		})
 		use({
-			"kkharji/lspsaga.nvim",
+			"glepnir/lspsaga.nvim",
+			branch = "main",
 			config = function()
 				require("configs.lspsaga")
 			end,

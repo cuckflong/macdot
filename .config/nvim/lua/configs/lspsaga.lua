@@ -1,11 +1,8 @@
 ---@diagnostic disable: undefined-global
 local lspsaga = require("lspsaga")
-lspsaga.setup({
-	border_style = "round",
-	error_sign = "",
-	warn_sign = "",
-	hint_sign = "",
-	infor_sign = "",
+lspsaga.init_lsp_saga({
+	border_style = "rounded",
+	diagnostic_header = { "", "", "", "" },
 	finder_action_keys = {
 		quit = {
 			"q",
@@ -18,12 +15,7 @@ lspsaga.setup({
 			"<ESC>",
 		},
 	},
-	rename_action_keys = {
-		quit = {
-			"q",
-			"<ESC>",
-		},
-	},
+	rename_action_quit = "<ESC>",
 })
 
 vim.diagnostic.config({
