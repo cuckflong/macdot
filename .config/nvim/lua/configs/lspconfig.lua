@@ -1,6 +1,7 @@
 ---@diagnostic disable: undefined-global
 
 -- Setup lspconfig.
+-- Add additional capabilities supported by nvim-cmp
 local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
 local lspconfig = require("lspconfig")
 
@@ -10,6 +11,7 @@ capabilities.textDocument.foldingRange = {
 }
 
 local on_attach = function(client)
+	vim.api.nvim_exec_autocmds("User", { pattern = "LspAttached" })
 	require("lsp-format").on_attach(client)
 end
 
