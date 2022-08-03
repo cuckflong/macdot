@@ -11,7 +11,6 @@ capabilities.textDocument.foldingRange = {
 }
 
 local on_attach = function(client)
-	vim.api.nvim_exec_autocmds("User", { pattern = "LspAttached" })
 	require("lsp-format").on_attach(client)
 end
 
@@ -36,6 +35,7 @@ local servers = {
 	"jsonls",
 	"sumneko_lua",
 	"solc",
+	"ocamllsp",
 }
 
 for _, lsp in ipairs(servers) do
